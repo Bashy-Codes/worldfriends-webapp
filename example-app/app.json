@@ -1,0 +1,71 @@
+{
+  "expo": {
+    "name": "WorldFriends",
+    "slug": "worldfriends",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "backgroundColor": "#000000",
+    "scheme": "worldfriends",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to your camera to take photos",
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select and save images.",
+        "NSPhotoLibraryAddUsageDescription": "This app needs access to save photos to your photo library."
+      },
+      "bundleIdentifier": "app.worldfriends"
+    },
+    "android": {
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.VIBRATE",
+        "com.android.vending.BILLING"
+      ],
+      "package": "app.worldfriends",
+      "googleServicesFile": "./google-services.json"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-secure-store",
+      "expo-notifications",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#000000",
+          "image": "./assets/images/logo.png",
+          "dark": {
+            "image": "./assets/images/logo.png",
+            "backgroundColor": "#000000"
+          },
+          "imageWidth": 180
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow app to access your camera to take photos."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them.",
+          "cameraPermission": "The app accesses your camera to let you take photos."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "1e3ac200-f418-4b29-981c-fb1d89c8e089"
+      }
+    }
+  }
+}
